@@ -22,7 +22,7 @@ public class Customer {
     private String email;
     private String gender;
 
-    @OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "customerId", referencedColumnName = "id")
     private List<Product> products;
 }
